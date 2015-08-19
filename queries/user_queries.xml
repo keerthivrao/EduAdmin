@@ -1,0 +1,196 @@
+<QUERIES>
+	<QUERY>
+		<IDENTIFIER>INSERT_USER</IDENTIFIER>
+		<MODE>INSERT</MODE>
+		<DESCRIPTION>INSERT_user_details</DESCRIPTION>
+		<DECLARATION>
+			INSERT  INTO user_details ( First_Name,Middle_Name,Last_Name,Date_Of_Birth,Address_Id,Role_Id,SSN,active,Created_By,Modified_By,Last_Modified_Date,login_id,pwd )  VALUES  (  ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ,? ,? , ?) 
+		</DECLARATION>
+		<PARAMETERS>
+			<PARAMETER>
+				<INDEX>1</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>2</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>3</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>4</INDEX>
+				<DATATYPE>2</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>5</INDEX>
+				<DATATYPE>1</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>6</INDEX>
+				<DATATYPE>1</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>7</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>8</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>9</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>10</INDEX>
+				<DATATYPE>1</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>11</INDEX>
+				<DATATYPE>2</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>12</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>13</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+		</PARAMETERS>
+
+	</QUERY>
+	<QUERY>
+		<IDENTIFIER>SELECT_USER</IDENTIFIER>
+		<MODE>SELECT</MODE>
+		<DESCRIPTION>SELECT_USER</DESCRIPTION>
+		<DECLARATION>
+			SELECT First_Name,Middle_Name,Last_Name,Date_Of_Birth,u.Address_Id address_id,Role_Id,SSN,active,User_Id,
+			Address1,Address2,City,Zip,State,Country,Phone,Mobile,Work,EMail,login_id,pwd
+			FROM user_details u,address_details a WHERE  a.address_id = u.address_id AND User_Id = ?
+		</DECLARATION>
+		<PARAMETERS>
+			<PARAMETER>
+				<INDEX>1</INDEX>
+				<DATATYPE>1</DATATYPE>
+			</PARAMETER>
+		</PARAMETERS>
+
+	</QUERY>
+	<QUERY>
+		<IDENTIFIER>VALIDATE_USER</IDENTIFIER>
+		<MODE>SELECT</MODE>
+		<DESCRIPTION>SELECT_USER</DESCRIPTION>
+		<DECLARATION>
+			SELECT First_Name,Middle_Name,Last_Name,Date_Of_Birth,u.Address_Id address_id,Role_Id,SSN,active,User_Id,
+			Address1,Address2,City,Zip,State,Country,Phone,Mobile,Work,EMail,login_id,pwd
+			FROM user_details u,address_details a WHERE  a.address_id = u.address_id AND login_Id = ? and pwd = ?
+		</DECLARATION>
+		<PARAMETERS>
+			<PARAMETER>
+				<INDEX>1</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>2</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+
+		</PARAMETERS>
+
+	</QUERY>
+
+	<QUERY>
+		<IDENTIFIER>SEARCH_USER</IDENTIFIER>
+		<MODE>SELECT</MODE>
+		<DESCRIPTION>SELECT_user_details</DESCRIPTION>
+		<DECLARATION>
+			SELECT First_Name,Middle_Name,Last_Name,Date_Of_Birth,Address_Id,r.Role_Id role_id,SSN,u.active active,User_Id,role_name role,login_id,pwd FROM user_details u,role_details r WHERE r.role_id = u.role_id and 1=1 
+		</DECLARATION>
+		<PARAMETERS>
+		</PARAMETERS>
+
+	</QUERY>
+	<QUERY>
+		<IDENTIFIER>DELETE_USER</IDENTIFIER>
+		<MODE>DELETE</MODE>
+		<DESCRIPTION>DELETE_user_details</DESCRIPTION>
+		<DECLARATION>
+			DELETE FROM user_details WHERE 1=1  AND User_Id = ?
+		</DECLARATION>
+		<PARAMETERS>
+			<PARAMETER>
+				<INDEX>1</INDEX>
+				<DATATYPE>1</DATATYPE>
+			</PARAMETER>
+		</PARAMETERS>
+
+	</QUERY>
+	<QUERY>
+		<IDENTIFIER>UPDATE_USER</IDENTIFIER>
+		<MODE>UPDATE</MODE>
+		<DESCRIPTION>Update User Details</DESCRIPTION>
+		<DECLARATION>
+			UPDATE user_details SET First_Name =  ? ,Middle_Name =  ? ,Last_Name =  ? ,Date_Of_Birth =  ? ,Address_Id =  ? ,Role_Id =  ? ,SSN =  ? ,active =  ? ,Created_By =  ? ,Modified_By =  ? ,Last_Modified_Date =  ? ,
+			pwd = ?
+			WHERE 1=1  AND User_Id = ?
+		</DECLARATION>
+		<PARAMETERS>
+			<PARAMETER>
+				<INDEX>1</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>2</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>3</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>4</INDEX>
+				<DATATYPE>2</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>5</INDEX>
+				<DATATYPE>1</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>6</INDEX>
+				<DATATYPE>1</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>7</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>8</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>9</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>10</INDEX>
+				<DATATYPE>2</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>11</INDEX>
+				<DATATYPE>2</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>12</INDEX>
+				<DATATYPE>0</DATATYPE>
+			</PARAMETER>
+			<PARAMETER>
+				<INDEX>13</INDEX>
+				<DATATYPE>1</DATATYPE>
+			</PARAMETER>
+		</PARAMETERS>
+
+	</QUERY>
+</QUERIES>

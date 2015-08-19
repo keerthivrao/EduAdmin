@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "/WEB-INF/tiles-config_1_1.dtd">
+
+<!-- Tiles definitions   -->
+
+<tiles-definitions>
+
+  <definition name="common">
+	  <put name="title" value="Credit USA"/>
+	  <put name="header" value="/jsp/common/header.jsp"/>
+	  <put name="leftPanel" value="/jsp/common/leftPanel.jsp"/>
+   	  <put name="body" value=""/>
+	  <put name="footer" value="/jsp/common/footer.jsp"/>
+	  <!--
+	  <put name="exception" value="/jsp/common/exception.jsp"/>
+	  -->
+  </definition>
+  
+  <definition name="commonpopup">
+	  <put name="title" value="Credit USA"/>
+   	  <put name="body" value=""/>
+	  <put name="exception" value="/jsp/common/exception.jsp"/>
+  </definition>
+  
+   <definition name="blank" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="body" value="/jsp/common/blank.jsp"/>
+  </definition>
+  
+  <definition name="login.page" path="/jsp/login.jsp">
+  </definition>
+  
+
+  <definition name="home.page" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/index.jsp"/>
+  </definition>
+  
+  <!-- 
+  <definition name="bou.home.page" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/index.jsp"/>
+  </definition>
+  
+  <definition name="distributor.home.page" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/index.jsp"/>
+  </definition>
+ -->
+
+  <definition name="enroll.customer" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA - Enroll Customer"/>
+	  <put name="body" value="/jsp/customerEnrollment.jsp"/>
+  </definition>
+  
+  <definition name="register.distributor" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA - Distributor Registration"/>
+	  <put name="body" value="/jsp/distributorRegistration.jsp"/>
+  </definition>
+  
+  <definition name="view.distributors" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA - Distributors"/>
+	  <put name="body" value="/jsp/distributorsList.jsp"/>
+  </definition>
+  <definition name="view.distributor.details" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/distributorDetails.jsp"/>
+  </definition>
+  
+  <definition name="view.customers" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA - Customer Status"/>
+	  <put name="body" value="/jsp/customerStatus.jsp"/>
+  </definition>
+    
+  <definition name="view.customer.details" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/customerDetails.jsp"/>
+  </definition>
+  
+  <definition name="payments.made" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/paymentsMadeList.jsp"/>
+  </definition>
+  <definition name="payments.received" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/paymentsList.jsp"/>
+  </definition>
+  <definition name="add.payment" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA - Add Payment"/>
+	  <put name="body" value="/jsp/paymentDetails.jsp"/>
+  </definition>
+  
+  <definition name="commisions.received" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/"/>
+  </definition>
+  
+  <definition name="view.upward" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/distributorHierarchy.jsp"/>
+  </definition>
+   
+  <definition name="add.user" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA - Create User"/>
+	  <put name="body" value="/jsp/userDetails.jsp"/>
+  </definition>    
+
+  <definition name="create.user" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA - Create User"/>
+	  <put name="body" value="/jsp/userDetails.jsp"/>
+	  
+	  <!--
+	  <put name="body" value="/jsp/common/header.jsp"/>
+	  -->
+  </definition>
+
+  <definition name="view.user.details" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/userDetails.jsp"/>
+  </definition>
+  
+    <definition name="view.users" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/usersList.jsp"/>
+  </definition>
+  
+  <definition name="add.role" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/addRole.jsp"/>
+  </definition> 
+    
+  <definition name="view.role" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/roleDetails.jsp"/>
+  </definition>  
+
+	  <definition name="search.role" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/rolesList.jsp"/>
+  </definition>  
+    
+  <definition name="approve.customer" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/customers_waitingForApproval.jsp"/>
+  </definition>  
+
+  <definition name="approve.distributor.list" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA"/>
+	  <put name="body" value="/jsp/distributors_waitingForApproval.jsp"/>
+  </definition>  
+  <definition name="show.profiles" extends="common" path="/jsp/layout/layout.jsp">
+	  <put name="title" value="Credit USA - Profile Options"/>
+	  <put name="body" value="/jsp/profileOptions.jsp"/>
+  </definition>  
+
+</tiles-definitions>

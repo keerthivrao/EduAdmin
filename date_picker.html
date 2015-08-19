@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<title>..:: earthli Calendar ::..</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link rel="stylesheet" type="text/css" href="styles/base.css">
+	<link rel="stylesheet" type="text/css" href="styles/calendar.css">
+
+	<script type="text/javascript" src="scripts/core.js"></script>
+	<script type="text/javascript" src="scripts/time.js"></script>
+	<script type="text/javascript" src="scripts/calendar.js"></script>
+	</head>
+	<body>
+    <script type="text/javascript">
+      cal = new HTML_CALENDAR ();
+
+			/** Adjust the path for images since they are in a sub-folder */
+
+      cal.image_path = 'images/'
+
+			/** The call to 'register' below attaches the calendar to the date/time field
+			 * corresponding to 'id' in the opening window. This reads the initial date,
+			 * and a few display options from the query string. 'display' draws the HTML. */
+
+      cal.register (Query_string.item ('id'));
+
+			/** Call 'display' to render the calendar into the window */
+
+      cal.display ();
+    </script>
+  </body>
+</html>
+

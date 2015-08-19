@@ -1,0 +1,761 @@
+body{
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333333;
+	font-size:12px;
+	background-color:#F0F0F0;
+}
+
+#topBanner{
+	/*width:1024px;*/
+	height:50px;
+	line-height:50px;
+	/*background-color:#009999;*/
+	background-color:#0065A8;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	font-size:200%;
+	font-weight:bold;
+	border-right:solid 1px #666666;
+}
+#messageBar{
+	/*width:1024px;*/
+	height:22px;
+	line-height:22px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#333333;
+	font-size:12px;
+	font-weight:bold;
+	background-color:#f0f0f0;
+	border-bottom:solid 1px #666666;
+	border-right:solid 1px #666666;	
+}
+
+#leftPanel{
+	width:17%;
+	float:left;
+	background-color:#f0f0f0;
+	border-right:solid 1px #666666;
+	overflow:auto;
+}
+#contentContainer{	
+	width:82%;
+	padding-left:4px;
+	float:left;	
+	/*text-align:right;*/
+	background-color:#FFFFFF;
+	overflow:auto;
+}
+#footer{	
+	position:absolute;
+   bottom:0;
+	width: 100%;
+	text-align:center;
+	
+	background-image:url(../images/test_footer.GIF);
+	/*background-image:url(../images/footerBg.gif);*/
+	background-repeat:repeat-x;
+	
+	* z-index:-100;
+	/*
+   position:absolute;
+   bottom:0;
+   width:100%;
+   text-align:center;
+   background:#FF0000;
+   */
+   display:none;
+}
+#sideMenu{
+	/*background-color:#E2F6FE;*/
+	background-color:#F0F0F0;
+	/*border-right:solid 1px #999999;*/
+	float:left;
+	clear:left;
+	vertical-align:top;
+	height:auto;
+	display:block;
+	overflow:auto;
+}
+#menuDivider{
+	position:static;
+	/*
+	background-image:url(../images/MenuDivider.gif);
+  	background-repeat:repeat-x;
+	*/
+  	height:6px;
+	clear:left;	
+}
+#topMenu a{
+	background-repeat:repeat-x;
+	color:#006194;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	padding-left:7px;
+	text-decoration:none;
+	line-height:23px; 
+	height:23px; 
+	display:block;
+	width:auto;
+}
+#topMenu a:hover{
+	background-repeat:repeat-x;
+	color:#333333;
+}
+.subMenu{
+	background-color:#F0F0F0;
+	overflow:hidden; 
+	font-family:Verdana,Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+.subMenu a{
+	background-color:#F0F0F0;
+	padding-left:15px;
+	height:18px;
+	line-height:18px;
+	display:block;
+	font-family:Verdana,Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color:#666666;
+	text-decoration:none;
+}
+.subMenu a:hover{
+	color:#000000;
+	text-decoration:none;
+	text-weight:bold;
+}
+.table{
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333333;
+	font-size:12px;
+}
+.tableBorder{
+	border:solid 1px #A5B2BD;
+	border-bottom:0px;
+}
+.tableHeader{
+	background-color:#ECFCFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#333333;
+	font-weight:bold;
+	font-size:10px;
+	border-bottom:solid 1px #A5B2BD;
+	border-right:solid 1px #A5B2BD;
+}
+.tableHeaderLast{
+	background-color:#ECFCFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#333333;
+	font-weight:bold;
+	font-size:10px;
+	border-bottom:solid 1px #A5B2BD;
+}
+.tableData{
+	background-color:#ffffff;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	border-right:solid 1px #A5B2BD;
+	border-bottom:solid 1px #A5B2BD;
+	white-space:nowrap;
+}
+.tableDataLast{
+	background-color:#ffffff;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	border-bottom:solid 1px #A5B2BD;
+}
+.historytableDataFirst{
+	background-color:#E8F2FE;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#7F0055;
+	font-weight:normal;
+	font-size:10px;
+	border-right:solid 1px #A5B2BD;
+	border-bottom:solid 1px #A5B2BD;
+	white-space:nowrap;
+}
+.historytableData{
+	background-color:#E8F2FE;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#7F0055;
+	font-weight:normal;
+	font-size:10px;
+	border-right:solid 1px #A5B2BD;
+	border-bottom:solid 1px #A5B2BD;
+	white-space:nowrap;
+}
+.historytableDataLast{
+	background-color:#E8F2FE;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#7F0055;
+	font-weight:normal;
+	font-size:10px;
+	border-bottom:solid 1px #A5B2BD;
+}
+.formSubhead{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:bold;
+	font-size:12px;
+	border-bottom:solid 1px #A5B2BD;
+}
+.formLabel{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	text-align:right;
+}
+.formLabelLeft{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	text-align:left;
+}
+.formSelect{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+}
+.formSelMedium{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:94px;
+}
+.formSelSmall{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:70px;
+}
+.formTxt{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:100px;
+	border:solid 1px #A5B2BD;
+}
+.formMandatoryTxt{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:100px;
+	border:solid 1px #A5B2BD;
+	background: #FAFFBD;
+}
+.formMandatoryTxtArea{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	border:solid 1px #A5B2BD;
+	background: #FAFFBD;
+}
+.formSplitTxt{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:30px;
+	border:solid 1px #A5B2BD;
+}
+.unspecifiedWidthTxt{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	border:solid 1px #A5B2BD;
+}
+.unspecifiedWidthMandatoryTxt{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	border:solid 1px #A5B2BD;
+	background: #FAFFBD;	
+}
+.formSelectedElement{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:100px;
+	background-color:#FEE089;
+	border:solid 1px #7F9DB9;
+}
+.formSelectedDate{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:65px;
+	background-color:#FEE089;
+	border:solid 1px #A5B2BD;
+}
+.formSelectedCheckBox{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	background-color:#FEE089;
+	border:solid 1px #7F9DB9;
+}
+.formTxtMedium{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:80px;
+	border:solid 1px #A5B2BD;
+}
+.formTxtSmall{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:50px;
+	border:solid 1px #A5B2BD;
+}
+.formNum{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:30px;
+	border:solid 1px #A5B2BD;
+	text-align:right;
+}
+.formTxtDate{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:65px;
+	border:solid 1px #A5B2BD;
+}
+.bcrumbs{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:bold;
+	font-size:12px;
+}
+.pageBreadcrumbs{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:bold;
+	font-size:12px;
+	text-decoration:none;
+	display:inline;
+}
+.pageBreadcrumbs:hover{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#902992;
+	font-weight:bold;
+	font-size:12px;
+	text-decoration:none;
+}
+.suMenuLinks{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#902992;
+	font-weight:normal;
+	font-size:12px;
+	text-decoration:none;
+}
+.noDisplay{
+	display:none;
+}
+
+
+.labelHeader{
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+.boldItalic
+{
+	/*text-decoration: underline;*/
+	font-weight:bold;
+	font-style:italic;
+
+}
+table
+{
+	font-size:12px;
+}
+.tableBorder{
+	border:solid 1px #A5B2BD;
+	border-bottom:0px;
+}
+.tableHeader{
+	background-color:#ECFCFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#333333;
+	font-weight:bold;
+	font-size:11px;
+	border-bottom:solid 1px #A5B2BD;
+	border-right:solid 1px #A5B2BD;
+}
+.tableHeaderLast{
+	background-color:#ECFCFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#333333;
+	font-weight:bold;
+	font-size:11px;
+	border-bottom:solid 1px #A5B2BD;
+}
+.tableData{
+	background-color:#ffffff;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:11px;
+	border-right:solid 1px #A5B2BD;
+	border-bottom:solid 1px #A5B2BD;
+	white-space:nowrap;
+}
+.tableDataLast{
+	background-color:#ffffff;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:11px;
+	border-bottom:solid 1px #A5B2BD;
+}
+.formSubhead{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:bold;
+	font-size:12px;
+	border-bottom:solid 1px #A5B2BD;
+	padding-top:10px;
+}
+.formLabel{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	text-align:right;
+}
+.formLabelLeft{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	text-align:left;
+}
+.formSelect{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+}
+.formSelMedium{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:94px;
+}
+.formSelSmall{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:70px;
+}
+.formTxt{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:100px;
+	border:solid 1px #A5B2BD;
+}
+.formSelectedElement{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:100px;
+	background-color:#FEE089;
+	border:solid 1px #7F9DB9;
+}
+.formSelectedDate{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:65px;
+	background-color:#FEE089;
+	border:solid 1px #A5B2BD;
+}
+.formSelectedCheckBox{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	background-color:#FEE089;
+	border:solid 1px #7F9DB9;
+}
+.formTxtMedium{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:80px;
+	border:solid 1px #A5B2BD;
+}
+.formTxtSmall{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:50px;
+	border:solid 1px #A5B2BD;
+}
+.formNum{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:30px;
+	border:solid 1px #A5B2BD;
+	text-align:right;
+}
+.formTxtDate{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	width:65px;
+	border:solid 1px #A5B2BD;
+}
+.bcrumbs{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:bold;
+	font-size:12px;
+}
+.pageBreadcrumbs{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:bold;
+	font-size:12px;
+	text-decoration:none;
+	display:inline;
+}
+.pageBreadcrumbs:hover{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#902992;
+	font-weight:bold;
+	font-size:12px;
+	text-decoration:none;
+}
+.suMenuLinks{
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#902992;
+	font-weight:normal;
+	font-size:12px;
+	text-decoration:none;
+}
+.noDisplay{
+	display:none;
+}
+.selectedTableData{
+	background-color:#CCCCCC;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	border-right:solid 1px #A5B2BD;
+	border-bottom:solid 1px #A5B2BD;
+	white-space:nowrap;
+}
+.selectedTableDataLast{
+	background-color:#CCCCCC;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000000;
+	font-weight:normal;
+	font-size:10px;
+	border-bottom:solid 1px #A5B2BD;
+}
+.smallButton{
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:top;
+	background-color: #4C99CC;
+	border: 1px solid #6C6C6C;
+	font-size:9px;
+	font-weight:bold;
+	color:#FFFFFF;
+	height:15px;
+}
+.largeButton{
+	text-align:top;
+	background-color: #4C99CC;
+	border: 1px solid #6C6C6C;
+	font-size:9px;
+	font-weight:bold;
+	color:#FFFFFF;
+	height:18px;	
+}
+/************************** CALENDAR STYLE SHEET ******************/
+/* Default attributes of table container for entire calendar */
+.table-style {
+	font-family: arial;
+	border-width: 1px !important;
+	border-style: solid; 
+	border-color: #a0a0a0; 
+	background-color: #ffffff;
+}
+
+.table-style td {
+	font-family: arial; 
+	font-size: 11px;
+}
+
+/* Default attributes of DIV containing table container for entire calendar.
+ * You probably don't want to alter this style.
+ */
+.div-style {
+	z-index: +999;
+	position: absolute;
+	visibility: hidden;
+}
+
+/* Default attributes used in calendar title (month and year columns).*/
+.title-style {
+	padding: 2px;
+	font-family: arial; 
+	font-size: 11px;
+	color: #5C5B57;	
+}
+
+/* Default attributes used in calendar title background.*/
+.title-background-style {
+	background-color: #D4D1C8;
+}
+
+/* Normal appearance of controls in calendar title. */
+/* Note: The right, left and down icons are images, which must be edited if you need to change them. */
+.title-control-normal-style {
+	border-style: solid;
+	border-width: 1px !important;
+	border-color: #9D9C95; 
+	cursor: pointer;
+}
+
+/* Moused-over (selected) appearance of controls in calendar title. */
+.title-control-select-style {
+	border-style: solid;
+	border-width: 1px !important;
+	border-color: #5C5B57; 
+	cursor: pointer;
+}
+
+/* Default attributes of drop down lists (month and year). */
+.dropdown-style {
+	border-width: 1px !important;
+	border-style: solid; 
+	border-color: #9D9C95;
+	background-color: #F2EFE5;
+	cursor: pointer;
+}
+
+.dropdown-style td {
+	font-family: arial; 
+	font-size: 11px; 
+}
+
+/* Default attributes selected (mouse-over) item in drop down lists (month and year). */
+.dropdown-select-style {
+	background-color: #5C5B57;
+	color: #fff;
+}
+
+/* Default attributes unselected (mouse-off) item in drop down lists (month and year). */
+.dropdown-normal-style {
+	background-color: #000;
+}
+
+/* Default attributes of calendar body (weekday titles and numbers). */
+.body-style {
+	padding: 2px;
+	background-color: #ffffff;
+}
+
+.body-style td {
+	font-family: verdana; 
+	font-size: 10px;
+}
+
+/* Attributes of current day in calendar body. */
+.current-day-style {
+	color: #912228;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* Attributes of end-of-week days (Sundays) in calendar body. */
+.end-of-weekday-style {
+	color: #909090;
+	text-decoration: none;
+}
+
+/* Attributes of all other days in calendar body. */
+.normal-day-style {
+	color: black;
+	text-decoration: none;
+}
+
+.normal-day-style:hover {
+	color: #229;
+	font-weight: bold;
+}
+
+/* Attributes of border around selected day in calendar body. */
+.selected-day-style {
+	border-style: solid;
+	border-width: 1px !important; 
+	border-color: #a0a0a0;
+}
+
+/* Default attributes of designated holidays. */
+.holiday-style {
+	background-color: #FFDDDD;
+}
+
+/* Attributes of today display at bottom on calendar */
+.today-style {
+	padding: 0px;
+	color: black;
+	background-color: #F2EFE5;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* Attributes of week number division (divider.gif) */
+.weeknumber-div-style {
+	background-color: #d0d0d0; 
+	padding: 0px;
+}
+
+a.chosen-date {font-weight: bold} 

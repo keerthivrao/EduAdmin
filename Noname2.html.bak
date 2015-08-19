@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script language="javascript" type="text/javascript" src="js/javascript_lib.js"></script>
+<script language="javascript" type="text/javascript" src="js/validator.js"></script>
+<script type="text/javascript" src="js/stringbuilder.js"></script>
+<script type="text/javascript" src="js/zip-state.js"></script>
+<link href="/CreditUSA/stylesheet/creditusa.css" type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="calendar/calendar.css" media="screen"></LINK>
+<SCRIPT type="text/javascript" src="calendar/calendar.js"></script>
+<SCRIPT type="text/javascript" src="js/validator.js"></script>
+<SCRIPT type="text/javascript" src="js/Map.js"></script>
+<title>Credit USA</title>
+<style>
+
+
+</style>
+<script>
+<!--
+function limitText(limitField, limitNum,nextFocus) 
+  {
+	limitField = document.getElementById(limitField);
+	nextFocus =  document.getElementById(nextFocus);
+	if(limitField && limitField.value)
+	{
+		if (limitField.value.length > limitNum) 
+		{
+			limitField.value = limitField.value.substring(0, limitNum);
+			if(nextFocus)
+			{
+				nextFocus.focus();
+			}
+		} 
+	}
+  }	
+
+	function splitPhoneNumber(phoneNumber,primaryPhoneId)
+	{
+		if(primaryPhoneId && phoneNumber)
+		{
+			var phonenumberdigits = phoneNumber.split('');
+			var target1 = "";//primaryPhoneId+"~1";
+			var target2 = "";//primaryPhoneId+"~2";
+			var target3 = "";//primaryPhoneId+"~3";
+			var target;
+			{
+				for(var index =0;index < phonenumberdigits.length;index++)
+				{
+					if(index < 3)	
+					{
+						target1 +=phonenumberdigits[index];
+					}
+					else if(index < 6)
+					{
+						target2 +=phonenumberdigits[index];
+					}
+					else
+					{
+						target3 +=phonenumberdigits[index];
+					}
+				}
+				
+				target = document.getElementById(primaryPhoneId+"~1");
+				if(target)
+					target.value = target1;
+				target = document.getElementById(primaryPhoneId+"~2");
+				if(target)
+					target.value = target2;
+				target = document.getElementById(primaryPhoneId+"~3");
+				if(target)
+					target.value = target3;
+			}
+		}
+	}
+	function splitSSN(ssn,ssnId)
+	{
+		if(ssnId && ssn)
+		{
+			var ssndigits = ssn.split('');
+			var target1 = "";//ssnId+"~1";
+			var target2 = "";//ssnId+"~2";
+			var target3 = "";//ssnId+"~3";
+			var target;
+			{
+				for(var index =0;index < ssndigits.length;index++)
+				{
+					if(index < 3)	
+					{
+						target1 +=ssndigits[index];
+					}
+					else if(index < 5)
+					{
+						target2 +=ssndigits[index];
+					}
+					else if(index < 9)
+					{
+						target3 +=ssndigits[index];
+					}
+				}
+				
+				target = document.getElementById(ssnId+"~1");
+				if(target)
+					target.value = target1;
+				target = document.getElementById(ssnId+"~2");
+				if(target)
+					target.value = target2;
+				target = document.getElementById(ssnId+"~3");
+				if(target)
+					target.value = target3;
+			}
+		}
+	}
+	function concatenateSSN(ssnId)
+	{
+		if(ssnId)
+		{
+			var target1 = document.getElementById(ssnId+"~1");
+			var target2 = document.getElementById(ssnId+"~2");
+			var target3 = document.getElementById(ssnId+"~3");
+			var target = document.getElementById(ssnId);
+			{
+				target1 = target1.value;
+				target2 = target2.value;
+				target3 = target3.value;
+				if(!target1)
+					target1 = "";
+				if(target2)
+					target1 += target2;
+				if(target3)
+					target1 += target3;
+				target.value = target1;
+			}
+		}
+	}
+	function concatenatePhoneNumber(primaryPhoneId)
+	{
+		if(primaryPhoneId)
+		{
+			var target1 = document.getElementById(primaryPhoneId+"~1");
+			var target2 = document.getElementById(primaryPhoneId+"~2");
+			var target3 = document.getElementById(primaryPhoneId+"~3");
+			var target = document.getElementById(primaryPhoneId);
+			{
+				target1 = target1.value;
+				target2 = target2.value;
+				target3 = target3.value;
+				if(!target1)
+					target1 = "";
+				if(target2)
+					target1 += target2;
+				if(target3)
+					target1 += target3;
+				target.value = target1;
+			}
+		}
+	}
+	function changeFieldsStatus(fieldNames,status)
+	{
+		var element;
+		if(fieldNames)
+		{
+			for(var index =0 ; index < fieldNames.length;index++)
+			{
+				element = document.getElementById(fieldNames[index]);
+				element.disabled = status;
+			}
+		}
+	}
+	function clearValues(fieldsToClear)
+	{
+		var element = "";
+		if(fieldsToClear)
+		{
+			for(var index =0; index < fieldsToClear.length;index++)
+			{
+				element = document.getElementById(fieldsToClear[index]);
+				element.value = "";
+			}
+		}
+	}
+	function validateDateFormat(element)
+	{
+		if(element)
+		{
+			
+		}
+	}
+	//-->
+	</script>
+</head>
+
+<body>
+<div id="loadingDiv"  style="width:300px;height:200px;
+background:#F0F0F0;filter:alpha(opacity=40);valign:middle;
+-moz-opacity:.40;opacity:.40;position:absolute;z-index:100;text-align:center;display:none; margin:0 auto;color:#FF0000;text-align:center;" >
+	<div style="font-weight:bold;font-size:17px;line-height:4"><img src="images/loading-wait.gif"/>Request Under process Please wait ....</div>	
+	</div>	
+	<div id="headerDiv">
+		
+
+
+
+<div id="topBanner"><div style="margin-left:10px">Credit USA</div></div>
+<div id="messageBar"><div style="margin-left:10px">
+Welcome
+
+
+ CreditUSA Admin - []
+ 
+
+<div style="text-align:right;display:inline;"><a href="login.jsp?action=logout" >Logout </a></div>
+</div>
+</div>
+	</div>
+	<div style="width:100%">
+	<div id="leftPanel">
+		
+
+
+
+
+
+
+ 
+<div style="margin-left:10px">
+		  <div id="sideMenu">
+				<div id="menuDivider"><!--Blue Divider--></div>
+				<div id="menuTitle"><!-- Menu Title --></div>
+				<div id="topMenu">
+					<a href="#1;" >Distributor</a>
+				</div>
+				<div id="distributorRegistration" class="subMenu">
+				
+					
+						<a href="#2" onclick="navigateToSpecified('distributor.do','1002')">Add Distributor</a>
+						
+						
+						<a href="#3" onclick="navigateToSpecified('distributor.do','1003')">View  Distributors</a>
+						
+							
+						<a href="#4" onclick="navigateToSpecified('distributor.do','1004')">Approve  Distributors</a>
+						
+
+								
+				</div>
+				<div id="topMenu">
+					<a href="#6;">Customer</a>	
+				</div>
+				<div id="customers" class="subMenu">
+				
+						<a href="#7" onclick="navigateToSpecified('customer.do','1002')">Enroll Customer</a>
+						
+						
+						<a href="#8" onclick="navigateToSpecified('customer.do','1003')">Approve  Customers</a>				
+								
+						
+						<a href="#9" onclick="navigateToSpecified('customer.do','1004')"> Customer Status</a>
+								
+				</div>
+				<div id="topMenu">
+					<a href="#10;">Payments</a>	
+				</div>
+				<div id="payments" class="subMenu">
+						<!--
+						<a href="#11" onclick="navigateToSpecified('payment.do','1002')">Add Payment</a>
+						-->
+				
+						<a href="#12" onclick="navigateToSpecified('payment.do','1008')">Payments Received</a>
+								
+				
+					
+					<a href="#13" onclick="navigateToSpecified('payment.do','1001')">Make/View Payments</a>
+					
+					
+								
+					
+				
+								
+
+				</div>
+				
+				
+				
+				<div id="topMenu">
+					<a href="#17;">User Management</a>	
+				</div>
+				<div id="users" class="subMenu">
+						<a href="#18" onclick="navigateToSpecified('user.do','showUserCreationForm')">Add User</a>
+						<a href="#19" onclick="navigateToSpecified('user.do','searchUsers')">View User</a>
+						<a href="#20" onclick="navigateToSpecified('role.do','addRole')">Add Role</a>
+						<a href="#21" onclick="navigateToSpecified('role.do','showRole')">View Role</a>						
+				</div>
+				<div id="topMenu">
+					<a href="#22;">Application</a>	
+				</div>
+				<div id="application" class="subMenu">
+						<a href="#23" onclick="navigateToSpecified('profile.do','1001')">Profile Options</a>
+				</div>
+					
+				<div id="topMenu">
+					<a href="#24;">Preferences</a>	
+				</div>
+				<div id="users" class="subMenu">
+						<a href="#25" onclick="navigateToSpecified('user.do','showProfile')">My Profile</a>
+				</div>				
+				
+				<!--
+				<div id="topMenu">
+					<a href="#26;" >Show Hierarchy</a>
+				</div>
+				<div id="hierarchy"  class="subMenu">
+					<a href="distributorsList_for_hierarchy.html"  target="iframePane" >Show Hierarchy</a>
+				</div>
+				-->
+				<div id="menuDivider"><!--Blue Divider--></div>
+				
+			</div>	
+		</div>
+		<form name="leftPanelForm" id="leftPanelForm" action="" method="post">
+			<input type="hidden" name="acode" value="">
+		</form>
+		<script>
+		<!--
+			function navigateToSpecified(action,acode)
+			{
+//alert('preparing to process');				
+prepareToProcess();
+				document.leftPanelForm.action = action;
+				document.leftPanelForm.acode.value=acode;
+//alert('preparing to submit');				
+				document.leftPanelForm.submit();
+			}
+		//-->
+		</script>		
+	</div>
+	<div id="contentContainer">		
+		
+
+
+
+
+
+
+<form name="userForm" method="post" action="/CreditUSA/user.do">
+	
+	<input type="hidden" name="acode" value="showUserCreationForm">
+	<input type="hidden" name="userid" value="">
+	<input type="hidden" name="addressid" value="">
+	<input type="hidden" name="distributorid" value="">
+	<input type="hidden" name="loginid" value="">
+	<input type="hidden" name="self" value="">	
+	<input type="hidden" name="pwd" value="">
+	<div style="padding-left:15px">
+	<div class="formSubhead">User Details</div><BR/>
+	
+
+	<table width="80%" cellpadding="0" cellspacing="0" border="0" class="table">
+	<tr>
+		<td>
+
+			<TABLE >
+				
+
+				<TR>
+					<TD width="25%">First Name</TD>
+					<TD  width="35%"><input type="text" name="firstname" value="" class="formTxt"></TD>
+					<TD  width="20%">Middle Name</TD>
+					<TD  width="30%"><input type="text" name="middlename" value="" class="formTxt"></TD>
+				</TR>
+				<TR>
+					<TD>Last Name</TD>
+					<TD><input type="text" name="lastname" value="" class="formTxt"></TD>
+					<TD>SSN</TD>
+					<TD>
+					<input type="text" class="formSplitTxt" id="ssn~1" onkeyup="limitText('ssn~1', 3,'ssn~2')" />-<input type="text" class="formSplitTxt" id="ssn~2" onkeyup="limitText('ssn~2', 2,'ssn~3')" />-<input type="text" class="formSplitTxt" id="ssn~3" onkeyup="limitText('ssn~3', 4)" />
+					<script>
+					splitSSN('','ssn');
+					</script>
+					<input type="hidden" name="ssn" value="" class="formTxt" id="ssn"></TD>		
+				</TR>
+				<TR>
+					<TD>Date Of Birth</TD>
+					<TD><input type="text" name="dateofbirth" value="" onchange="validateDateFormat(this)" class="formTxt" id="dateofbirth">
+					<!-- 
+					<img src="images/calendar.gif" width="16" height="16" border="0" align="absmiddle" onclick="displayCalendar(document.getElementById('dateofbirth'),'mm/dd/yyyy',this)"/>
+					-->
+					<a href="javascript:void(0)" onclick="alert(self.gfPop);if(self.gfPop)gfPop.fPopCalendar(document.getElementById('dateofbirth'));return false;" ><img class="PopcalTrigger" align="absmiddle" src="images/calendar.gif" width="16" height="16" border="0" alt=""></a>
+					</TD>
+					
+					<TD></TD>
+					<TD></TD>
+				</TR>
+				
+				<TR>
+					<TD colspan=4>&nbsp;</TD>
+				</TR>				
+				<TR>
+					<TD colspan=4 class="boldItalic">Mailing Address</TD>
+				</TR>
+				<TR>
+					<TD>Address 1</TD>
+					<TD><input type="text" name="address1" value="" class="formTxt"><div>
+					<TD>Address 2</TD>
+					<TD><input type="text" name="address2" value="" class="formTxt"></TD>
+				</TR>
+				<TR>
+					<TD>City</TD>
+					<TD><input type="text" name="city" value="" class="formTxt"></TD>	
+					<TD>Zip</TD>
+					<TD><input type="text" name="zip" value="" onchange="setState(this,'state','displaypaymentstate')" class="formTxt"></TD>
+				</TR>
+				<TR>
+					<TD>State</TD>
+					<TD><input type="hidden" name="state" value="" class="formTxt"><input type="text" class="formTxt" styleId="displaypaymentstate" name="displaypaymentstate" disabled/></TD>
+					<TD>Country</TD>
+					<TD><input type="text" name="country" value="" class="formTxt"></TD>
+				</TR>
+				<TR>
+					<TD>Phone</TD>
+					<TD>
+					<input type="text" class="formSplitTxt" id="phone~1" onkeyup="limitText('phone~1', 3,'phone~2')" />-<input type="text" class="formSplitTxt" id="phone~2" onkeyup="limitText('phone~2', 3,'phone~3')" />-<input type="text" class="formSplitTxt" id="phone~3" onkeyup="limitText('phone~3', 4)" />
+					<script>
+					splitPhoneNumber('','phone');
+					</script>
+					<input type="hidden" name="phone" value="" class="formTxt" id="phone">
+					</TD>					
+					<TD>Mobile</TD>
+					<TD>
+					<input type="text" class="formSplitTxt" id="mobile~1" onkeyup="limitText('mobile~1', 3,'mobile~2')" />-<input type="text" class="formSplitTxt" id="mobile~2" onkeyup="limitText('mobile~2', 3,'mobile~3')" />-<input type="text" class="formSplitTxt" id="mobile~3" onkeyup="limitText('mobile~3', 4)" />
+					<script>
+					splitPhoneNumber('','mobile');
+					</script>
+					<input type="hidden" name="mobile" value="" class="formTxt" id="mobile">
+					</TD>					
+				</TR>
+				<TR>
+					<TD>Work</TD>
+					<TD>
+					<input type="text" class="formSplitTxt" id="work~1" onkeyup="limitText('work~1', 3,'work~2')" />-<input type="text" class="formSplitTxt" id="work~2" onkeyup="limitText('work~2', 3,'work~3')" />-<input type="text" class="formSplitTxt" id="work~3" onkeyup="limitText('work~3', 4)" />
+					<script>
+					splitPhoneNumber('','work');
+					</script>
+					<input type="hidden" name="work" value="" class="formTxt" id="work">
+					</TD>					
+					<TD>E-Mail</TD>
+					<TD><input type="text" name="email" value="" class="formTxt"></TD>
+				</TR>
+					
+				<TR>
+					<TD>Role</TD>
+					<TD>
+						
+						<select name="roleid" class="formSelect" id="roleid"><option value="1">ADMIN</option>
+<option value="2">DISTRIBUTOR</option>
+<option value="3">testrole</option></select>
+						
+					</TD>
+					<TD></TD>
+					<TD></TD>
+				</TR>
+				
+				<TR>
+					<TD>Active</TD>
+					<TD><input type="checkbox" name="active1" value="on"></TD>
+					<TD></TD>
+					<TD></TD>
+				</TR>
+				
+				<!--TR>
+					<TD>Start Date</TD>
+					<TD><input type="text" name="startdate" value="" disabled="disabled" class="formTxt"></TD>
+					<TD>End Date</TD>
+					<TD><input type="text" name="enddate" value="" disabled="disabled" class="formTxt"></TD>
+				</TR-->
+			</TABLE>			
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="center">	
+		<input type="button" name="registerCustomer" value="Save Details" class="largeButton" onclick="submitDetails()">&nbsp;&nbsp;
+		<input type="button" name="registerCustomer" value="Close" class="largeButton" onclick="self.close()"></td>		
+	</tr>
+</table>
+</div>
+<iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="calScripts/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+</iframe>
+</form>
+<script>
+<!--
+	function submitDetails()
+	{
+		
+		document.userForm.acode.value="createUser";
+		if(validateUserForm())
+			document.userForm.submit();		
+	}
+	function validateUserForm() {
+		
+		var formObj = document.userForm;
+
+		var isValidForm = true;
+		var tempElement;
+		var tempValue;
+		var message = "";
+		{
+			tempValue = formObj.firstname.value;
+			if(isNull(tempValue))
+			{
+				isValidForm = false;
+				message += "\n First name should not be left blank";
+			}
+			tempValue = formObj.lastname.value;
+			if(isNull(tempValue))
+			{
+				isValidForm = false;
+				message += "\n Last name should not be left blank";
+			}
+			tempValue = formObj.ssn.value;
+			if(!isValidSSN(tempValue))
+			{
+				isValidForm = false;
+				message += "\n SSN is not valid, SSN should have 9 disgits either as  \n \t NNN-NN-NNNN format or NNNNNNNNN format";
+			}
+			tempValue = formObj.dateofbirth.value;
+			if(isNull(tempValue))
+			{
+				isValidForm = false;
+				message += "\n Date of Birth can not be left blank";
+			}	
+			tempValue = formObj.address1.value;
+			if(isNull(tempValue))
+			{
+				isValidForm = false;
+				message += "\n Address1 should not be left blank";
+			}
+			tempValue = formObj.city.value;
+			if(isNull(tempValue))
+			{
+				isValidForm = false;
+				message += "\n City should not be left blank";
+			}
+			tempValue = formObj.zip.value;
+			if(isNull(tempValue))
+			{
+				isValidForm = false;
+				message += "\n Zip should not be left blank";
+			}
+			tempValue = formObj.country.value;
+			if(isNull(tempValue))
+			{
+				isValidForm = false;
+				message += "\n Country should not be left blank";
+			}					
+		}
+
+		 var tvar = document.getElementById('roleid');
+		if(tvar) {
+		tempValue = tvar.value;
+		if(isNull(tempValue))
+		{
+			isValidForm = false;
+			message += "\n Role should be selected";
+		}
+		}
+		if(!isValidForm)
+			alert(message);
+		return isValidForm;
+	}
+	function isValidSSN(ssn) {
+		var matchArr = ssn.match(/^(\d{3})-?\d{2}-?\d{4}$/);
+		var numDashes = ssn.split('-').length - 1;
+		if (matchArr == null || numDashes == 1) {
+			return false;
+		}
+		else if (parseInt(matchArr[1],10)==0) {
+			return false;
+		}
+		else {
+			return true;		
+   		}
+	}		
+//-->
+</script>		
+	</div>
+	</div>
+	<div id="footer" style="display:none">
+		&copy; Credit USA All rights reserved.
+		
+	</div>
+
+</body>
+<script>
+<!--
+	var errorMessage = "";
+	var displayErrorMessage = false;
+	function setDocWidth(){
+		var clientHigh = document.documentElement.clientHeight;
+		var headerDivHeight = document.getElementById("headerDiv").offsetHeight;
+		var footerDivHeight = document.getElementById("footer").offsetHeight;
+			var pageHeight = clientHigh-headerDivHeight-footerDivHeight+"px";
+			document.getElementById("leftPanel").style.height=pageHeight;
+			document.getElementById("contentContainer").style.height=pageHeight;
+	}
+	window.onresize = myResize;
+	function myResize() {
+	if (document.all)
+		{setDocWidth();
+		//alert(document.body.clientWidth);
+		}else{
+		setDocWidth();
+		//alert(window.innerWidth);
+		}
+	}	
+	
+	function prepareToProcess()
+	{
+		var loadingDiv = document.getElementById("loadingDiv");
+		var clientHig = document.documentElement.clientHeight;
+		var clientWidth = document.documentElement.clientWidth;
+		loadingDiv.style.display = "block";
+		loadingDiv.style.height = clientHig+"px";
+		loadingDiv.lineHeight = clientHig;
+		loadingDiv.style.width = clientWidth+"px";		
+	}
+	setDocWidth();
+	//-->
+</script>
+</html>
+
+
+<logic:messagesPresent message="true">
+		<font color="red"> 
+		 </font>
+</logic:messagesPresent>
+<script>
+<!--
+	if(displayErrorMessage == true)
+		alert(errorMessage);
+
+//-->		
+</script>

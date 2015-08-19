@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="antlr">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/WEB-INF/lib/struts-1.2.7-lib/antlr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WEB-INF/lib/struts-1.2.7-lib/commons-beanutils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WEB-INF/lib/struts-1.2.7-lib/commons-digester.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WEB-INF/lib/struts-1.2.7-lib/commons-fileupload.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WEB-INF/lib/struts-1.2.7-lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WEB-INF/lib/struts-1.2.7-lib/commons-validator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WEB-INF/lib/struts-1.2.7-lib/jakarta-oro.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WEB-INF/lib/struts-1.2.7-lib/struts.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

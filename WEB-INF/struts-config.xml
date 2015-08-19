@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"   "/WEB-INF/struts-config_1_1.dtd">
+<struts-config>
+	<!-- ======================================== Form Bean Definitions -->
+	<form-beans>
+		<form-bean name="userForm"
+			type="com.edu.adm.web.form.UserForm">
+		</form-bean>
+		<form-bean name="loginForm"
+			type="com.edu.adm.web.form.UserForm">
+		</form-bean>
+
+	</form-beans>
+
+	<!-- =================================== Global Exception Definitions -->
+	<global-exceptions>
+
+	</global-exceptions>
+
+	<!-- =================================== Global Forward Definitions -->
+
+	<global-forwards>
+		<forward name="users" path="/users.html" redirect="true" />
+		<forward name="login" path="/index.html" redirect="true" />
+		<forward name="home" path="/home.html" redirect="true" />
+	</global-forwards>
+
+	<!-- =================================== Action Mapping Definitions -->
+
+	<action-mappings>
+		<!--
+		<action path="/index"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/login.jsp" />
+		
+		<action path="/login"
+			type="LoginAction"
+			name="loginForm" scope="request" parameter="acode"
+			>
+			<forward name="success" path="home.page" />
+			<forward name="failure" path="login.page" />
+			<forward name="logout" path="/redirectLogout.jsp" />
+		</action>
+		
+		<action path="/logout"
+			type="LoginAction"
+			scope="request" parameter="acode"
+			>
+			<forward name="success" path="login.page" />
+		</action>
+		-->
+		<action path="/user"
+			type="com.edu.adm.web.actions.UserAction"
+			name="userForm" scope="request" parameter="acode"
+			>
+
+			<forward name="showUserDetails" path="view.user.details" />
+			<forward name="createUser" path="create.user" />
+			<forward name="blank" path="home.page" />
+			<forward name="viewUsers" path="view.users" />			
+			<forward name="loginfail" path="login.page" />			
+			
+		</action>
+		<action path="/login"
+			type="com.edu.adm.web.actions.UserAction"
+			name="loginForm" scope="request" parameter="acode"
+			>
+			<forward name="login" path="login.page" />			
+		</action>
+</action-mappings>
+
+	<!-- ================================ Message Resources Definitions -->
+	
+	<message-resources parameter="com.creditusa.ApplicationResources" null="false" />
+	
+	<controller processorClass="com.edu.adm.web.util.EduAdminRequestProcessor" />
+	<!-- ======================================= Plug Ins Configuration -->
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/tileDefinitions.xml" />
+	</plug-in>
+</struts-config>
+
+
